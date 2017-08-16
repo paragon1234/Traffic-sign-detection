@@ -14,7 +14,12 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./InputDataHistogram.jpg
-
+[image2]: ./images/doubleCurve.png
+[image3]: ./images/yield.png
+[image4]: ./images/keepRight.png
+[image5]: ./images/roundAboutMandatory.png
+[image6]: ./images/speedLimit60.png
+[image7]: ./images/wrong.png
 
 
 ## Design And Architecture
@@ -93,19 +98,18 @@ I have experimented with variation of the above architecture, but either the acc
 #### 4. Result
 
 My final model results were:
-* validation set accuracy of 96.7
-* test set accuracy of 95.1
+* validation set accuracy of 97.5
+* test set accuracy of 95.5
  
 
 
 ### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Five German traffic signs found on the web
+Here are five German traffic signs that I found on the web. Each image is re-sized to 32x32 using irfanView software.
 
-Here are five German traffic signs that I found on the web:
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image2] ![alt text][image3] ![alt text][image4] 
+![alt text][image5] ![alt text][image6] ![alt text][image7]
 
 The first image might be difficult to classify because ...
 
