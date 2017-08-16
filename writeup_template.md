@@ -75,19 +75,19 @@ My final model consisted of the following layers:
 |						|												|
  
 I have experimented with variation of the above architecture, but either the accuracy was less than this, or equal to it with more computation in each iteration. Hence, I finalized with the above architecture as it gave best performance with least computation. Following variations were tried:
-*Increasing depth of covolution layers: conv1 to 32 and conv2 to 64
-*Increasing depth of layers: 3 convolution layers and 3 fully connected layers
-*Fully connected layer using concatenated data from all the 3 covolution layers
-*Adding droup-out of 0.6/0.8 to the fully connected layer
-*Adding droup-out of 0.9, 0.8, 0.7 to the 3 convolution layers and a droupout of 0.9 to all the 3 fully connected alyers
+* Increasing depth of covolution layers: conv1 to 32 and conv2 to 64
+* Increasing depth of layers: 3 convolution layers and 3 fully connected layers
+* Fully connected layer using concatenated data from all the 3 covolution layers
+* Adding droup-out of 0.6/0.8 to the fully connected layer
+* Adding droup-out of 0.9, 0.8, 0.7 to the 3 convolution layers and a droupout of 0.9 to all the 3 fully connected alyers
 
 
 #### 3. Architecture Specification
-*Adam Optimizer
-*rate = 0.001
-*EPOCHS = 12
-*BATCH_SIZE = 128
-*Softmax Cross Entropy with One-Hot Labels
+* Adam Optimizer
+* rate = 0.001
+* EPOCHS = 12
+* BATCH_SIZE = 128
+* Softmax Cross Entropy with One-Hot Labels
 
 
 #### 4. Result
