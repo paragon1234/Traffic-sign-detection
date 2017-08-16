@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 [image1]: ./InputDataHistogram.jpg
 [image2]: ./images/doubleCurve.png
 [image3]: ./images/yield.png
-[image4]: ./images/keepRight.pngng
+[image4]: ./images/keepRight.png
 [image5]: ./images/speedLimit60.png
 [image6]: ./images/stop.png
 
@@ -108,30 +108,34 @@ My final model results were:
 Here are five German traffic signs that I found on the web. Each image is re-sized to 32x32 using irfanView software. The top five probabilities of each image along with the labels are:
 
 ![alt text][image2] 
-[  9.99988437e-01,   6.16074567e-06,   5.09703432e-06, 1.15665337e-07,   1.07816064e-07]
-[21, 25, 12, 11, 23]
-Conclusion: Correct with high confidence
+
+* [  9.99988437e-01,   6.16074567e-06,   5.09703432e-06, 1.15665337e-07,   1.07816064e-07]
+* [21, 25, 12, 11, 23]
+* Conclusion: Correct with high confidence
 
 ![alt text][image3] 
-[  1.00000000e+00,   2.44773955e-14,   6.03770040e-15, 3.64478913e-19,   1.46541585e-19]
-[13, 12, 35, 38, 15]
-Conclusion: Correct with high confidence
 
-![alt text][image4] 
-[  1.00000000e+00,   4.10162840e-16,   7.20662497e-18, 6.51623398e-18,   4.57199351e-18]
-[38, 34, 36, 25, 40
-Conclusion: Correct with high confidence
+* [  1.00000000e+00,   2.44773955e-14,   6.03770040e-15, 3.64478913e-19,   1.46541585e-19]
+* [13, 12, 35, 38, 15]
+* Conclusion: Correct with high confidence
 
-![alt text][image5] 
-[  9.55771565e-01,   4.15060930e-02,   1.27782230e-03, 6.56668795e-04,   3.70674330e-04]
-[40, 35, 37, 38, 12]
-Conclusion: Wrong with high probability. The image is not clear because of snow. It is predicting "Round About Mandatory" because of circular shape. The correct label is not within top 5.
+![alt text][image4]
+
+* [  1.00000000e+00,   4.10162840e-16,   7.20662497e-18, 6.51623398e-18,   4.57199351e-18]
+* [38, 34, 36, 25, 40
+* Conclusion: Correct with high confidence
+
+![alt text][image5]
+
+* [  9.55771565e-01,   4.15060930e-02,   1.27782230e-03, 6.56668795e-04,   3.70674330e-04]
+* [40, 35, 37, 38, 12]
+* Conclusion: Wrong with high probability. The image is not clear because of snow. It is predicting "Round About Mandatory" because of circular shape. The correct label is not within top 5.
 
 ![alt text][image6]
-[  9.99993682e-01,   6.35076822e-06,   4.25740154e-08, 2.45831959e-08,   1.68262364e-08]
-[14, 17, 38, 34,  9]
-Conclusion: Correct with high confidence. This image has a very dark contrast. However, as we have applied adaptive histogram equalizer, we are able to predict it correctly.
+
+* [  9.99993682e-01,   6.35076822e-06,   4.25740154e-08, 2.45831959e-08,   1.68262364e-08]
+* [14, 17, 38, 34,  9]
+* Conclusion: Correct with high confidence. This image has a very dark contrast. However, as we have applied adaptive histogram equalizer, we are able to predict it correctly.
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set.
-
