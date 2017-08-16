@@ -17,9 +17,8 @@ The goals / steps of this project are the following:
 [image2]: ./images/doubleCurve.png
 [image3]: ./images/yield.png
 [image4]: ./images/keepRight.png
-[image5]: ./images/roundAboutMandatory.png
-[image6]: ./images/speedLimit60.png
-[image7]: ./images/wrong.png
+[image5]: ./images/speedLimit60.png
+[image6]: ./images/stop.png
 
 
 ## Design And Architecture
@@ -106,41 +105,43 @@ My final model results were:
 ### Test a Model on New Images
 
 #### 1. Five German traffic signs found on the web
-Here are five German traffic signs that I found on the web. Each image is re-sized to 32x32 using irfanView software.
-
-![alt text][image2] ![alt text][image3] ![alt text][image4] 
-![alt text][image5] ![alt text][image6] ![alt text][image7]
-
-The first image might be difficult to classify because ...
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
-Here are the results of the prediction:
-
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+Here are five German traffic signs that I found on the web. Each image is re-sized to 32x32 using irfanView software. The top five probabilities of each image along with the labels are:
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+![alt text][image2] 
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+* [  9.99988437e-01,   6.16074567e-06,   5.09703432e-06, 1.15665337e-07,   1.07816064e-07]
+* [21, 25, 12, 11, 23]
+* Conclusion: Correct with high confidence
 
 
-For the second image ... 
+![alt text][image3] 
+
+* [  1.00000000e+00,   2.44773955e-14,   6.03770040e-15, 3.64478913e-19,   1.46541585e-19]
+* [13, 12, 35, 38, 15]
+* Conclusion: Correct with high confidence
+
+
+![alt text][image4]
+
+* [  1.00000000e+00,   4.10162840e-16,   7.20662497e-18, 6.51623398e-18,   4.57199351e-18]
+* [38, 34, 36, 25, 40
+* Conclusion: Correct with high confidence
+
+
+![alt text][image5]
+
+* [  9.55771565e-01,   4.15060930e-02,   1.27782230e-03, 6.56668795e-04,   3.70674330e-04]
+* [40, 35, 37, 38, 12]
+* Conclusion: Wrong with high probability. The image is not clear because of snow. It is predicting "Round About Mandatory" because of circular shape. The correct label is not within top 5.
+
+
+![alt text][image6]
+
+* [  9.99993682e-01,   6.35076822e-06,   4.25740154e-08, 2.45831959e-08,   1.68262364e-08]
+* [14, 17, 38, 34,  9]
+* Conclusion: Correct with high confidence. This image has a very dark contrast. However, as we have applied adaptive histogram equalizer, we are able to predict it correctly.
+
+
+
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set.
