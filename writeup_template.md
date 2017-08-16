@@ -1,6 +1,6 @@
-#**Traffic Sign Recognition using Convolutional Neural Network** 
+# **Traffic Sign Recognition using Convolutional Neural Network** 
 
-**Build a Traffic Sign Recognition Project**
+## Build a Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -14,21 +14,16 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./InputDataHistogram.jpg
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+
+
 
 ## Design And Architecture
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/paragon1234/Traffic-signal-detection)
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Basic Features
+#### 1. Basic Features
 
 * The size of training set is 34799 rbg images
 * The size of the validation set is 4410 rgb images
@@ -36,7 +31,8 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43 
 
-####2. Dataset Exploration
+
+#### 2. Dataset Exploration
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the data distribution of classes in the training, validation and test set.
 
@@ -45,18 +41,19 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 From the above diagram it is clear that the distribution of classes in the training, validation and test set is same. However, the dataset in imbalanced as all the classes do not have same number of samples.  The images also differ significantly in terms of clarity, contrast and brightness. So we will need to apply some kind of histogram equalization, this should noticeably improve feature extraction. There are also rotation, scale and other geometric transformation.
 
-###Design and Test a Model Architecture
 
-####1. Pre-processing
+
+### Design and Test a Model Architecture
+
+
+#### 1. Pre-processing
 
 1) As a first step, I decided to convert the images to grayscale because the classification feature are independent of the color.
 2) Histogram equalizer was applied because the method is useful in images with backgrounds and foregrounds that are both bright or both dark. This is useful when detecting images under dark or bright light. We used adaptive histogram equalization as this particularly useful when the image contains regions that are significantly lighter or darker than most of the image.
 3) Finally we converted the gray pixels of the image in the range -0.5 to 0.5
 
  
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2.  model architecture 
 
 My final model consisted of the following layers:
 
@@ -77,36 +74,31 @@ My final model consisted of the following layers:
 |						|												|
 |						|												|
  
+I have experimented with variation of the above architecture, but either the accuracy was less than this, or equal to it with more computation in each iteration. Hence, I finalized with the above architecture as it gave best performance with least computation. Following variations were tried:
+*Increasing depth of covolution layers: conv1 to 32 and conv2 to 64
+*Increasing depth of layers: 3 convolution layers and 3 fully connected layers
+*Fully connected layer using concatenated data from all the 3 covolution layers
+*Adding droup-out of 0.6/0.8 to the fully connected layer
+*Adding droup-out of 0.9, 0.8, 0.7 to the 3 convolution layers and a droupout of 0.9 to all the 3 fully connected alyers
 
 
-####3. Architecture Specification
+#### 3. Architecture Specification
 *Adam Optimizer
 *rate = 0.001
 *EPOCHS = 12
 *BATCH_SIZE = 128
 *Softmax Cross Entropy with One-Hot Labels
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+
+#### 4. Result
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* validation set accuracy of 96.7
+* test set accuracy of 95.1
  
 
-###Test a Model on New Images
+
+### Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
@@ -148,8 +140,3 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 
 For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
-
